@@ -1,0 +1,7 @@
+a) Cargar y mostrar el vector con 3 materias (completo)
+
+b) Mostrar las materias con más de 5 docentes
+
+c) Cambiar la cantidad de profesores en las materias que tengan más de 500 alumnos. Si tiene menos de 10 docentes, cambiar la cantidad a 10. Si tiene más de 10 no hacer modificaciones.
+
+d) Modificar la clase de manera tal de no permitir cursos con más de 500 alumnos. Si la cantidad es mayor a ese número poner como valor 500
