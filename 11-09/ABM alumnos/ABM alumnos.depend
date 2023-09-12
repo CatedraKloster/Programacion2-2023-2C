@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1694476818 source:c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	"prototipos.h"
+	"clsFecha.h"
+	"personaAlumno.h"
+	"clsArchivoAlumnos.h"
+	"fGlobales.h"
+
+1694473026 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\prototipos.h
+
+1693262701 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\clsfecha.h
+
+1694471249 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\personaalumno.h
+
+1694477536 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\fglobales.h
+
+1694477567 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\clsarchivoalumnos.h
+
