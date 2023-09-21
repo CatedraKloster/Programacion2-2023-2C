@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1695083879 source:c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	"prototipos.h"
+	"clsFecha.h"
+	"personaAlumno.h"
+	"clsArchivoAlumnos.h"
+	"fGlobales.h"
+	"reportes.h"
+
+1694473026 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\prototipos.h
+
+1695083735 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\clsfecha.h
+
+1695083701 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\personaalumno.h
+
+1695078644 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\fglobales.h
+
+1695083152 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\clsarchivoalumnos.h
+
+1695084508 c:\users\danie\onedrive - frgp.utn.edu.ar\pr2\11-09\abm alumnos\reportes.h
+
+1695144947 source:c:\facultad\ayudantia\2023-2c\prog 2\programacion2-2023-2c\19-09\main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	"prototipos.h"
+	"clsFecha.h"
+	"personaAlumno.h"
+	"clsArchivoAlumnos.h"
+	"fGlobales.h"
+	"reportes.h"
+
+1695145053 c:\facultad\ayudantia\2023-2c\prog 2\programacion2-2023-2c\19-09\prototipos.h
+
+1695144940 c:\facultad\ayudantia\2023-2c\prog 2\programacion2-2023-2c\19-09\clsfecha.h
+
+1695144927 c:\facultad\ayudantia\2023-2c\prog 2\programacion2-2023-2c\19-09\personaalumno.h
+
+1695144908 c:\facultad\ayudantia\2023-2c\prog 2\programacion2-2023-2c\19-09\clsarchivoalumnos.h
+
+1695144895 c:\facultad\ayudantia\2023-2c\prog 2\programacion2-2023-2c\19-09\fglobales.h
+
+1695144953 c:\facultad\ayudantia\2023-2c\prog 2\programacion2-2023-2c\19-09\reportes.h
+
