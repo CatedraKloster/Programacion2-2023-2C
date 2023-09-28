@@ -26,6 +26,7 @@ class Fecha{
             else dia=-1;
         }
         int getDia(){return dia;}
+        int getAnio(){return anio;}
 };
 
 

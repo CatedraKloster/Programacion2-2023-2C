@@ -5,6 +5,8 @@
 int buscarLegajo(int legajo);
 Alumno leerRegistro(int pos);
 bool sobreEscribirRegistro(Alumno reg, int pos);
+bool modificarTitulo();
+bool bajaFisica() ;
 ///
 
 
@@ -34,7 +36,7 @@ bool grabarRegistro(){
     ///sizeof reg*CANT_REG-> cantidad de bytes que se van a escribir en el archivo
 	fclose(pAlu);
     return escribio;*/
-    const int CANT_REG=1;
+
     Alumno reg;
     ArchivoAlumnos archiAlu("alumnos.dat");
     cout<<"INGRESAR LOS VALORES DEL REGISTRO "<<endl;
@@ -89,6 +91,41 @@ bool bajaLogicaRegistro(){
         reg.setEstado(false);
         ///SOBREESCRIBIR EL REGISTRO EN EL ARCHIVO EN LA MISMA POSICION QUE TENÍA
         bool quePaso=sobreEscribirRegistro(reg, pos);
+        return quePaso;
+    }
+    return false;
+}
+
+bool modificarTitulo(){
+    ArchivoAlumnos archi("alumnos.dat");
+    ///INGRESAR EL VALOR QUE IDENTIFICA EL REGISTRO A BORRAR
+    int legajo, pos;
+    cout<<"INGRESAR EL LEGAJO DEL ALUMNO A MODIFICAR ";
+    cin>>legajo;
+    ///BUSCAR SI EL LEGAJO EXISTE EN EL ARCHIVO.
+    ///LA FUNCION DEVUELVE LA POSICIÓN DEL REGISTRO EN EL ARCHIVO. SI NO ENCUENTRA EL LEGAJO DEVUELVE -1
+    pos=archi.buscarLegajo(legajo);
+    if(pos==-1){
+        cout<<"NO EXISTE ESE LEGAJO"<<endl;
+        return false;
+    }
+    ///LEER EL REGISTRO DEL ARCHIVO Y PONERLO EN UNA VARIABLE DE MEMORIA
+    Alumno reg;
+    reg=archi.leerRegistro(pos);
+
+    cout<<"REGISTRO A MODIFICAR "<<endl;
+    reg.Mostrar();
+    cout<<endl;
+    char opc;
+    cout<<"DESEA MODIFICARLO? (S/N) ";
+    cin>>opc;
+    char tituloNuevo[30];
+    if(opc=='s'|| opc=='S'){
+        cout<<"INGRESAR NUEVO TITULO ";
+        cargarCadena(tituloNuevo,29);
+        reg.setTitulo(tituloNuevo);
+        ///SOBREESCRIBIR EL REGISTRO EN EL ARCHIVO EN LA MISMA POSICION QUE TENÍA
+        bool quePaso=archi.sobreEscribirRegistro(reg, pos);
         return quePaso;
     }
     return false;
@@ -164,6 +201,38 @@ bool sobreEscribirRegistro(Alumno reg, int pos){
     bool escribio=fwrite(&reg,sizeof reg,1,p);
     fclose(p);
     return escribio;
+}
+
+bool bajaFisica(){
+    ArchivoAlumnos archi("alumnos.dat");
+    Alumno reg;
+    int cantReg=archi.contarRegistros();
+    int i;
+    FILE *p;
+    p=fopen("alumnos.bak", "wb");
+    if(p==NULL) return false;
+    for(i=0;i<cantReg;i++){
+        reg=archi.leerRegistro(i);
+        fwrite(&reg, sizeof reg,1, p);
+    }
+    fclose(p);
+
+    FILE *pBak;
+    pBak=fopen("alumnos.bak","rb");
+    if(pBak==NULL)return false;
+
+    p=fopen("alumnos.dat","wb");
+    if(p==NULL){
+            fclose(pBak);
+            return false;
+    }
+    while(fread(&reg, sizeof reg, 1, pBak)==1){
+        if(reg.getEstado()==true){
+            fwrite(&reg, sizeof reg, 1, p);
+        }
+    }
+    fclose(pBak);
+    fclose(p);
 }
 
 #endif // FGLOBALES_H_INCLUDED

@@ -1,0 +1,103 @@
+
+Clase: molde donde se definen las propiedades y el comportamiento que tendrán los objetos de esa clase.
+Objeto: variable o instancia de una clase. 
+
+class Clase{
+private:///solo es accesible dentro de la clase
+	propiedades o variables de la clase. 
+public:///es accesible dentro y fuera de la clase
+	métodos o funciones de la clase
+	void metodo1(int a1);
+};
+
+:: scope alcance de resolución
+
+void Clase::metodo1(int a1){
+
+
+}
+
+Especificadores de acceso: private, public y protected
+
+Encapsulamiento: al definir las propiedades dentro de la parte privada, se preservan los datos del objeto
+ya que sólo podrá ser modificado usando métodos de la misma clase definidos para eso.
+
+protect
+Métodos:
+Constructor/es:
+* Tiene el mismo nombre que la clase
+* No devuelve nada
+* Puede tener o no parámetros
+* Se ejecuta de manera automática cuando el objeto nace.
+* Puede haber varios constructores: sobrecarga de funciones
+
+Destructor:
+* Tiene el mismo nombre que la clase pero al nombre le antecede el caracter ~
+* No devuelve nada
+* No puede tener parámetros
+* Se ejecuta de manera automática cuando el objeto muere.
+* Puede haber solo 1 destructor
+
+gets()->permiten que el mundo externo conozca los valores de cada una de las propiedades
+sets()->permiten asignar valor a cada una de las propiedades
+Mostrar()
+Cargar()
+
+Clase obj;
+obj.Cargar();
+obj.Mostrar();
+
+
+Sobrecarga de funciones: en C++ podemos tener funciones distintas pero con el mismo nombre.
+Se tienen que diferenciar en los parámetros que reciben.
+
+Los parámetros de las funciones pueden tener valores por defecto, por omisión.
+
+int funcion(int a=10){
+
+}
+
+Puntero this: puntero oculto que contiene la dirección de cada uno de los objetos de esa clase que llama a algún método.
+Mediante this la clase puede diferenciar a cada uno de sus objetos.
+
+Herencia: permite crear clases nuevas a partir de clases existentes. La clase existente: base; clases nuevas: derivadas.
+Herencia simple en la que tenemos una clase base y un conjunto de clases derivadas.
+
+La clase derivada recibe (hereda) todo lo que está definido en la clase base.
+
+Para que sea aplicable este mecanismo se tiene que cumplir que la clase derivada SEA clase base.
+alumno ES persona
+
+
+Composición:utilizar objetos de una clase como propiedad de otra clase.
+Alumno TIENE fecha de nacimiento. En la composición tenemos que usar los métodos definidos en la clase a la que pertenece
+el objeto usado por composición.
+
+Archivos: funciones de C para el manejo de archivos.
+
+ABRIR O CREAR UN ARCHIVO-> 	FILE *p=fopen("ruta_nombre","modo") MODOS wb, ab, rb, rb+
+				if(p==NULL) no se pudo abrir el archivo
+
+ESCRIBIR (IR DE LA MEMORIA AL DISCO)	fwrite(&var, sizeof var,1, p);
+
+LEER EL ARCHIVO (IR DEL DISCO A LA MEMORIA)	fread(&var, sizeof var,1, p); 
+
+CERRAR EL ARCHIVO fclose(p);
+
+fseek(punteroFILE, cuantos_bytes_mover,desde_donde_mover); 	principio: 0, SEEK_SET	
+								posición actual: 1 . SEEK_CUR
+								fin: 2, SEEK_END
+
+int tam=ftell(p) -> devueve la cantidad de bytes entre el principio del archivo y la posición actual del puntero
+
+ALTA->agregar registros
+BAJA->eliminar registros (lógica o física)
+MODIFICAR ->cambiar el valor de uno o varios campos de un registro del archivo.
+LISTADOS-> permiten mostrar de distintas maneras el contenido de un archivo.
+
+
+
+
+
+
+

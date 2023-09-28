@@ -38,6 +38,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="personaAlumno.h" />
 		<Unit filename="prototipos.h" />
+		<Unit filename="reportes.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

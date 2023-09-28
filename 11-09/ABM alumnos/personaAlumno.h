@@ -1,7 +1,7 @@
 #ifndef PERSONAALUMNO_H_INCLUDED
 #define PERSONAALUMNO_H_INCLUDED
 
-class Persona{
+class Persona{     ///clase base
 protected:
     char nombre[30], apellido[30], direccion[30];
     char email[30], telefono[30];
@@ -11,11 +11,17 @@ protected:
 public:
     void Cargar();
     void Mostrar();
-    void setDNI(int d){DNI=d;}
+    bool setDNI(int d){
+        if(DNI<=0) return false;
+        DNI=d;
+    }
 
     int getDNI(){return DNI;}
     void setEstado(bool e){estado=e;}
     bool getEstado(){return estado;}
+
+    const char *getApellido(){return apellido;}
+    Fecha getFechaNacimiento(){return fechaNacimiento;}
 
 };
 
@@ -31,7 +37,13 @@ void Persona::Cargar(){
     cout<<"TELEFONO: ";
     cargarCadena(telefono, 29);
     cout<<"DNI: ";
-    cin>>DNI;
+    int doc
+    cin>>doc;
+    if(!setDNI(doc)){
+        cout<<"NO PUEDE HABER UN DNI NEGATIVO";
+        return;
+    }
+    DNI=doc;
     cout<<"FECHA DE NACIMIENTO "<<endl;
     fechaNacimiento.Cargar();
     estado=true;
@@ -54,7 +66,7 @@ void Persona::Mostrar(){
     fechaNacimiento.Mostrar();
 }
 
-class Alumno:public Persona{
+class Alumno: public Persona{
 private:
     int legajo;
     int IDCarrera;
@@ -65,7 +77,9 @@ public:
 
     void setLegajo(int l){legajo=l;}
     int getlegajo(){return legajo;}
-    void modificarDNI(int d){DNI=d;}
+    void setDNI(int d){DNI=d;}
+
+    void setTitulo(const char *nt){strcpy(tituloSecundario,nt);}
 };
 
 void Alumno::Cargar(){
